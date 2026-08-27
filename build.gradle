@@ -1,0 +1,99 @@
+plugins {
+    id "fabric-loom" version "${loom_version}"
+    id "maven-publish"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
+}
+
+loom {
+    runs {
+        client {
+            client()
+            configName = "CNPC Wizards Integration Client"
+            runDir = "run/client"
+        }
+        server {
+            server()
+            configName = "CNPC Wizards Integration Server"
+            runDir = "run/server"
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    modCompileOnly "maven.modrinth:spell-engine:${project.spell_engine_version}"
+    modCompileOnly "maven.modrinth:spell-power:${project.spell_power_version}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter:5.11.4"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+processResources {
+    inputs.property "version", project.version
+    filteringCharset = "UTF-8"
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+    options.release = 21
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+
+tasks.withType(org.gradle.api.tasks.bundling.AbstractArchiveTask).configureEach {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    withSourcesJar()
+}
+
+jar {
+    from("README.md")
+    from("LICENSE")
+    from("ARCHIVE_NOTICE.md")
+    from("THIRD_PARTY_NOTICES.md")
+    manifest {
+        attributes(
+            "Implementation-Title": "CNPC Wizards Integration (Unofficial)",
+            "Implementation-Version": project.version,
+            "Implementation-Vendor": "QiZhang",
+            "Implementation-License": "GPL-3.0-only"
+        )
+    }
+}
+
+tasks.named("sourcesJar") {
+    from("LICENSE")
+    from("ARCHIVE_NOTICE.md")
+    from("THIRD_PARTY_NOTICES.md")
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "cnpc_wizards_integration",
+  "version": "${version}",
+  "name": "CNPC Wizards Integration (Unofficial)",
+  "description": "Independent compatibility layer for invoking Spell Engine and Wizards casting flows from non-player NPCs.",
+  "authors": [
+    "QiZhang"
+  ],
+  "license": "GPL-3.0-only",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "cn.qizhang.cnpcwizardsintegration.CnPcWizardsIntegration"
+    ]
+  },
+  "mixins": [
+    "cnpc_wizards_integration.client.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.1",
+    "fabric-api": ">=0.116.7+1.21.1",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  },
+  "suggests": {
+    "customnpcs": ">=1.0.0",
+    "spell_engine": ">=1.9.15+1.21.1",
+    "wizards": ">=3.0.4+1.21.1",
+    "elemental_wizards_rpg": ">=3.0.1+1.21.1"
+  }
+}

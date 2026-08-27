@@ -1,0 +1,11 @@
+{
+  "required": false,
+  "package": "cn.qizhang.cnpcwizardsintegration.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "GuiNpcMenuMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

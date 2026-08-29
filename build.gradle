@@ -82,6 +82,14 @@ jar {
     from("LICENSE")
     from("ARCHIVE_NOTICE.md")
     from("THIRD_PARTY_NOTICES.md")
+    from("LICENSE_POLICY.md")
+    from("ASSET_LICENSE.md")
+    from("LICENSES/Apache-2.0.txt") {
+        into("LICENSES")
+    }
+    from("LICENSES/LicenseRef-EeryFrank-Assets-Permission-Required.txt") {
+        into("LICENSES")
+    }
     manifest {
         attributes(
             "Implementation-Title": "CNPC Wizards Integration (Unofficial)",
@@ -96,4 +104,12 @@ tasks.named("sourcesJar") {
     from("LICENSE")
     from("ARCHIVE_NOTICE.md")
     from("THIRD_PARTY_NOTICES.md")
+    from("LICENSE_POLICY.md")
+    from("ASSET_LICENSE.md")
+    from("LICENSES/Apache-2.0.txt") {
+        into("LICENSES")
+    }
+    from("LICENSES/LicenseRef-EeryFrank-Assets-Permission-Required.txt") {
+        into("LICENSES")
+    }
 }

@@ -8,7 +8,8 @@ The following names and identifiers appear because the project was designed to i
 |---|---|---|
 | Minecraft | Host game; not distributed | Proprietary; subject to Mojang/Microsoft terms |
 | Fabric Loader / Fabric API | Mod loader and API | Their respective upstream licenses |
-| Fabric Loom / Gradle Wrapper | Build tooling | Their respective upstream licenses |
+| Fabric Loom | Build tooling; not copied into the mod JAR | MIT |
+| Gradle Wrapper / Gradle | Redistributed build launcher and wrapper JAR | Apache-2.0; text in `LICENSES/Apache-2.0.txt` |
 | Spell Engine | Compile-time and runtime API | GPL-3.0 in the development artifact metadata |
 | Spell Power Attributes | Compile-time and runtime API | GPL-3.0 in the development artifact metadata |
 | Wizards | Optional runtime spell content | All Rights Reserved in the development artifact metadata |
@@ -17,5 +18,7 @@ The following names and identifiers appear because the project was designed to i
 | JUnit | Test framework | EPL-2.0 |
 
 This table is a compatibility notice, not a replacement for upstream license files or terms. Before assembling or redistributing a playable modpack, obtain each dependency from its authorized source and review the exact license and distribution rules for the version being used.
+
+The generated Gradle Wrapper files retain their upstream notices and Apache-2.0 terms. They are not relicensed as project-authored GPL source.
 
 Minecraft, Mojang, Microsoft, Fabric, CustomNPCs, Spell Engine, Wizards, and other names or marks belong to their respective owners. Their mention does not imply endorsement or affiliation.

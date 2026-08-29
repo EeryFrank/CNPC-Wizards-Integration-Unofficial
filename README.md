@@ -73,6 +73,6 @@ No third-party mod source, assets, or mod JARs are included. Names and IDs are u
 
 ## License
 
-Original project code and documentation in this repository are licensed under the [GNU General Public License v3.0 only](LICENSE). The license does not grant rights to Minecraft or any third-party mod, asset, trademark, or bundled game content.
+Original project source and functional material in this repository are licensed under the [GNU General Public License v3.0 only](LICENSE). Project-owned art, audio, and branding are permission-required by default and are not covered by the GPL. Historical grants and third-party terms remain unchanged. See [`LICENSE_POLICY.md`](LICENSE_POLICY.md), [`ASSET_LICENSE.md`](ASSET_LICENSE.md), and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for the exact path and rights boundaries.
 
 The software is provided **as is**, without warranty or support. See [`ARCHIVE_NOTICE.md`](ARCHIVE_NOTICE.md) for the full archive statement.
